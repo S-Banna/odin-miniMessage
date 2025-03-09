@@ -1,20 +1,20 @@
 const express = require("express");
 const app = express();
 
-const indexRouter = require("./routes/indexRouter");
-const newRouter = require("./routes/newRouter");
+const indexRouter = require("./routes/indexRouter.js");
+const newRouter = require("./routes/newRouter.js");
 
 const path = require("path");
 const ejs = require("ejs");
 
 const assetsPath = path.join(__dirname, "public");
-app.set(express.static(assetsPath));
+app.use(express.static(assetsPath));
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 app.use("/", indexRouter);
-app.use("/new", newRouter);
+// app.use("/new", newRouter);
 
 app.use((err, req, res, next) => {
 	console.error(err);

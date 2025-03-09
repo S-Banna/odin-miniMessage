@@ -1,0 +1,17 @@
+<html>
+	<head>
+		<title><%= title %></title>
+		<link rel="stylesheet" href="/styles.css" />
+	</head>
+	<body>
+		<div class="mainCont">
+			<% messages.forEach(message => { %>
+			<div class="container">
+				<h3 class="title PM"><%= message.user %>:</h3>
+				<p class="message PM"><%= message.text %></p>
+				<p class="date PM"><%= message.added %></p>
+			</div>
+			<% }); %>
+		</div>
+	</body>
+</html>
