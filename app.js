@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
+app.use(express.urlencoded({ extended: true }));
 
 const indexRouter = require("./routes/indexRouter.js");
-const newRouter = require("./routes/newRouter.js");
 
 const path = require("path");
 const ejs = require("ejs");
@@ -14,7 +14,6 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 app.use("/", indexRouter);
-// app.use("/new", newRouter);
 
 app.use((err, req, res, next) => {
 	console.error(err);
