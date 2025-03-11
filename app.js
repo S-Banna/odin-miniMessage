@@ -20,5 +20,5 @@ app.use((err, req, res, next) => {
 	res.status(err.status || 500).send(err.message);
 });
 
-const PORT = 3000;
+const PORT = 8000;
 app.listen(PORT, (req, res) => console.log("Up and running on port " + PORT));
